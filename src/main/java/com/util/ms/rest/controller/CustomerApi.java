@@ -35,8 +35,7 @@ public interface CustomerApi {
     	consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
         produces = { "application/json" }, 
         method = RequestMethod.POST)
-    ResponseEntity<Customer> createCustomer(@RequestHeader("x-jwt-assertion") String xjwtAssert,
-    		@ApiParam(value = "Created customer object" ,required=true )  @Valid @RequestBody Customer body);
+    ResponseEntity<Customer> createCustomer(@ApiParam(value = "Created customer object" ,required=true )  @Valid @RequestBody Customer body);
 
 
     @ApiOperation(value = "Delete customer", nickname = "deleteCustomer", notes = "This can only be done by the logged in customer.", tags={ "customer", })

@@ -55,10 +55,7 @@ public class CustomerApiController {
     	consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
         produces = { "application/json" }, 
         method = RequestMethod.POST)    
-    public ResponseEntity<Customer> createCustomer(@RequestHeader("x-jwt-assertion") String xjwtAssert,
-    		@ApiParam(value = "Created customer object", required=true )  @Valid @RequestBody Customer body) {
-
-    	log.info("xjwtAssert " + xjwtAssert);
+    public ResponseEntity<Customer> createCustomer(@ApiParam(value = "Created customer object", required=true )  @Valid @RequestBody Customer body) {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		JwtUser userDetails = (JwtUser) authentication.getPrincipal();

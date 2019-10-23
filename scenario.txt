@@ -1,5 +1,22 @@
 Scenario 
  
-A new project is initiating within the organisation. The objective of the project is to enable the customers of the organisation to manage their profile (end to end i.e. create, update and delete) through web channel and mobile (app) channel.  Being a senior member within the API team, you have been tasked to deliver: • APIs that can be consumed by mobile apps • APIs that can be consumed by web channel The backend system is an enterprise CRM and is not yet ready to expose REST APIs. The CRM team is in the process of designing their REST APIs. The expected deliverables from you are: 1. API Contract Definition (SWAGGER is preferred but not mandatory) 2. Very high-level integration design document (in not more than 4 – 5 sentences or a single diagram, no preference) 3. Security mechanism (either implement or describe what would do if you had a week’s time to deliver) 4. APIs delivered through microservices pattern (either Java Spring Boot or NodeJS) 5. Checked in code in git 6. A README file 
+A new project is initiating within the organisation. 
+The objective of the project is to enable the customers of the organisation to manage their profile 
+(end to end i.e. create, update and delete) through web channel and mobile (app) channel.  
+
+Being a senior member within the API team, you have been tasked to deliver: 
+• APIs that can be consumed by mobile apps 
+• APIs that can be consumed by web channel The backend system is an enterprise CRM and is not yet ready to expose REST APIs. 
+The CRM team is in the process of designing their REST APIs. 
+The expected deliverables from you are: 
+
+1. API Contract Definition (SWAGGER is preferred but not mandatory) 
+2. Very high-level integration design document (in not more than 4 – 5 sentences or a single diagram, no preference) 
+3. Security mechanism (either implement or describe what would do if you had a week’s time to deliver) 
+4. APIs delivered through microservices pattern (either Java Spring Boot or NodeJS) 
+5. Checked in code in git 
+6. A README file 
  
-Design considerations: • Customer profile includes first name, last name, date of birth and address (different type like home, office, email etc.) • The design should be extensible so that new data fields can be added over a period 
+Design considerations: 
+• Customer profile includes first name, last name, date of birth and address (different type like home, office, email etc.) 
+• The design should be extensible so that new data fields can be added over a period 

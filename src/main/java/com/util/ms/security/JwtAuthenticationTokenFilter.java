@@ -26,7 +26,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
-        final String authToken = request.getHeader("x-jwt-assertion");
+        final String authToken = request.getHeader("jwt-key");
         logger.info("Auth Token is "+authToken+".");
         if (authToken != null && !"".equalsIgnoreCase(authToken)
         		&& SecurityContextHolder.getContext().getAuthentication() == null) {

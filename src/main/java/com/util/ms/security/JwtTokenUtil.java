@@ -2,11 +2,7 @@ package com.util.ms.security;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 import org.apache.commons.logging.Log;
@@ -19,6 +15,11 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * 
+ * @author arul
+ *
+ */
 @Component
 public class JwtTokenUtil {
 	 private final Log LOGGER = LogFactory.getLog(this.getClass());
@@ -55,7 +56,7 @@ public class JwtTokenUtil {
 		if(isGetName) {
 			try {
 				JsonNode rootNode = new ObjectMapper().readTree(new StringReader(decodedBody));
-				JsonNode subs = rootNode.get("http://wso2.org/claims/subscriber");
+				JsonNode subs = rootNode.get("http://sazi.org/claims/subscriber");
 				if(subs != null) {
 					return subs.asText();
 				}
@@ -69,7 +70,7 @@ public class JwtTokenUtil {
 		}else {
 			try {
 				JsonNode rootNode = new ObjectMapper().readTree(new StringReader(decodedBody));
-				JsonNode subs = rootNode.get("http://wso2.org/claims/role");
+				JsonNode subs = rootNode.get("http://sazi.org/claims/role");
 				if(subs != null&&subs.isArray()) {
 					String roles = StreamSupport.stream(subs.spliterator(), true)
 					.map(s->"ROLE_"+s.asText().toUpperCase())
