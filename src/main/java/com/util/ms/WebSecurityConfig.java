@@ -16,7 +16,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.util.ms.security.JwtAuthenticationEntryPoint;
 import com.util.ms.security.JwtAuthenticationTokenFilter;
 
-
+/**
+ * 
+ * @author arul
+ *
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
