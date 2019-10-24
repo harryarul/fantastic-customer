@@ -1,7 +1,6 @@
 ## Customer Microservice
 
-Spring Boot Service to enable customers manage their profile 
-
+Spring Boot Service to enable customers manage their profile
 
 ## Overview  
 
@@ -16,6 +15,7 @@ You can view the api documentation in swagger-ui by pointing to
 http://localhost:8080/Sazi/customer/1.0/swagger-ui.html
 
 Use the below key to Autorize
+
 Key: jwt-key
 Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2F6aS5vcmcvY2xhaW1zL3JvbGUiOlsiSW50ZXJuYWwvc3Vic2NyaWJlciIsIkludGVybmFsL2NyZWF0b3IiLCJJbnRlcm5hbC9wdWJsaXNoZXIiLCJJbnRlcm5hbC9ldmVyeW9uZSIsImFkbWluIl0sImh0dHA6Ly9zYXppLm9yZy9jbGFpbXMvc3Vic2NyaWJlciI6ImFkbWluIiwic3ViIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJBcnVsIEhhcnJ5IiwiaWF0IjoxNTE2MjM5MDIyfQ.Q1rjD5sAXy10jxiV2wIk0jkWjSHSHHaF9O3IPMl_XgQ
 
@@ -32,16 +32,20 @@ mvn clean install
 Import project in Eclipse
 Run Spring Boot Application
 
-##Expected Deliverables
+## Expected Deliverables
 
 1. API Contract Definition - customer-swagger.yaml
 2. High level Integration design document - CustomerMicroservice.pdf
 3. Spring Security Implemented
-	The service contains the role(s) that it allows in the applicaiton.properties
+	The service contains the role(s) that it allows in the application.properties
 	From the incoming request header the JWT token id decoded to find and match the role.
-4. Used Spring boot Microservice framework
+4. Used Spring boot Microservices framework
 5. Code checked in at - https://github.com/harryarul/fantastic-customer
 6. This file.
 	
- 
+## Design considerations: 
+• Customer profile includes first name, last name, date of birth and Address as List for Home, Office etc..
+• The design is extensible with the Attributes as List to add any new fields of key/value pairs.
+• Basic in-memory storage of Customers with Concurrent HashMap.
+
 
