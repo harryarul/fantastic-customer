@@ -1,7 +1,6 @@
 ## Customer Microservice
 
-Spring Boot Service to enable customers manage their profile 
-
+Spring Boot Service to enable customers manage their profile
 
 ## Overview  
 
@@ -32,7 +31,7 @@ mvn clean install
 Import project in Eclipse
 Run Spring Boot Application
 
-##Expected Deliverables
+## Expected Deliverables
 
 1. API Contract Definition - customer-swagger.yaml
 2. High level Integration design document - CustomerMicroservice.pdf
