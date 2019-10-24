@@ -37,9 +37,9 @@ Run Spring Boot Application
 1. API Contract Definition - customer-swagger.yaml
 2. High level Integration design document - CustomerMicroservice.pdf
 3. Spring Security Implemented
-	The service contains the role(s) that it allows in the applicaiton.properties
+	The service contains the role(s) that it allows in the application.properties
 	From the incoming request header the JWT token id decoded to find and match the role.
-4. Used Spring boot Microservice framework
+4. Used Spring boot Microservices framework
 5. Code checked in at - https://github.com/harryarul/fantastic-customer
 6. This file.
 	
