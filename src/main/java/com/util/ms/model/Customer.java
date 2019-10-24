@@ -1,6 +1,10 @@
 package com.util.ms.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import javax.validation.Valid;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -9,12 +13,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * 
- * @author arul
- *
+ * Customer
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-10-22T02:04:45.001Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-10-24T00:22:32.020Z")
 
 public class Customer   {
   @JsonProperty("id")
@@ -29,6 +31,9 @@ public class Customer   {
   @JsonProperty("lastName")
   private String lastName = null;
 
+  @JsonProperty("dob")
+  private String dob = null;
+
   @JsonProperty("email")
   private String email = null;
 
@@ -41,26 +46,13 @@ public class Customer   {
   @JsonProperty("customerStatus")
   private Integer customerStatus = null;
 
-  @JsonProperty("streetNo")
-  private Long streetNo = null;
+  @JsonProperty("address")
+  @Valid
+  private List<Address> address = null;
 
-  @JsonProperty("streeName")
-  private String streeName = null;
-
-  @JsonProperty("streeType")
-  private String streeType = null;
-
-  @JsonProperty("suburb")
-  private String suburb = null;
-
-  @JsonProperty("postCode")
-  private Long postCode = null;
-
-  @JsonProperty("city")
-  private String city = null;
-
-  @JsonProperty("county")
-  private String county = null;
+  @JsonProperty("attributes")
+  @Valid
+  private List<Attributes> attributes = null;
 
   public Customer id(Long id) {
     this.id = id;
@@ -142,6 +134,26 @@ public class Customer   {
     this.lastName = lastName;
   }
 
+  public Customer dob(String dob) {
+    this.dob = dob;
+    return this;
+  }
+
+  /**
+   * Get dob
+   * @return dob
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public String getDob() {
+    return dob;
+  }
+
+  public void setDob(String dob) {
+    this.dob = dob;
+  }
+
   public Customer email(String email) {
     this.email = email;
     return this;
@@ -208,10 +220,10 @@ public class Customer   {
   }
 
   /**
-   * Customer Status
+   * Get customerStatus
    * @return customerStatus
   **/
-  @ApiModelProperty(value = "Customer Status")
+  @ApiModelProperty(value = "")
 
 
   public Integer getCustomerStatus() {
@@ -222,144 +234,62 @@ public class Customer   {
     this.customerStatus = customerStatus;
   }
 
-  public Customer streetNo(Long streetNo) {
-    this.streetNo = streetNo;
+  public Customer address(List<Address> address) {
+    this.address = address;
+    return this;
+  }
+
+  public Customer addAddressItem(Address addressItem) {
+    if (this.address == null) {
+      this.address = new ArrayList<Address>();
+    }
+    this.address.add(addressItem);
     return this;
   }
 
   /**
-   * Get streetNo
-   * @return streetNo
+   * Get address
+   * @return address
   **/
   @ApiModelProperty(value = "")
 
+  @Valid
 
-  public Long getStreetNo() {
-    return streetNo;
+  public List<Address> getAddress() {
+    return address;
   }
 
-  public void setStreetNo(Long streetNo) {
-    this.streetNo = streetNo;
+  public void setAddress(List<Address> address) {
+    this.address = address;
   }
 
-  public Customer streeName(String streeName) {
-    this.streeName = streeName;
+  public Customer attributes(List<Attributes> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+
+  public Customer addAttributesItem(Attributes attributesItem) {
+    if (this.attributes == null) {
+      this.attributes = new ArrayList<Attributes>();
+    }
+    this.attributes.add(attributesItem);
     return this;
   }
 
   /**
-   * Get streeName
-   * @return streeName
+   * Get attributes
+   * @return attributes
   **/
   @ApiModelProperty(value = "")
 
+  @Valid
 
-  public String getStreeName() {
-    return streeName;
+  public List<Attributes> getAttributes() {
+    return attributes;
   }
 
-  public void setStreeName(String streeName) {
-    this.streeName = streeName;
-  }
-
-  public Customer streeType(String streeType) {
-    this.streeType = streeType;
-    return this;
-  }
-
-  /**
-   * Get streeType
-   * @return streeType
-  **/
-  @ApiModelProperty(value = "")
-
-
-  public String getStreeType() {
-    return streeType;
-  }
-
-  public void setStreeType(String streeType) {
-    this.streeType = streeType;
-  }
-
-  public Customer suburb(String suburb) {
-    this.suburb = suburb;
-    return this;
-  }
-
-  /**
-   * Get suburb
-   * @return suburb
-  **/
-  @ApiModelProperty(value = "")
-
-
-  public String getSuburb() {
-    return suburb;
-  }
-
-  public void setSuburb(String suburb) {
-    this.suburb = suburb;
-  }
-
-  public Customer postCode(Long postCode) {
-    this.postCode = postCode;
-    return this;
-  }
-
-  /**
-   * Get postCode
-   * @return postCode
-  **/
-  @ApiModelProperty(value = "")
-
-
-  public Long getPostCode() {
-    return postCode;
-  }
-
-  public void setPostCode(Long postCode) {
-    this.postCode = postCode;
-  }
-
-  public Customer city(String city) {
-    this.city = city;
-    return this;
-  }
-
-  /**
-   * Get city
-   * @return city
-  **/
-  @ApiModelProperty(value = "")
-
-
-  public String getCity() {
-    return city;
-  }
-
-  public void setCity(String city) {
-    this.city = city;
-  }
-
-  public Customer county(String county) {
-    this.county = county;
-    return this;
-  }
-
-  /**
-   * Get county
-   * @return county
-  **/
-  @ApiModelProperty(value = "")
-
-
-  public String getCounty() {
-    return county;
-  }
-
-  public void setCounty(String county) {
-    this.county = county;
+  public void setAttributes(List<Attributes> attributes) {
+    this.attributes = attributes;
   }
 
 
@@ -376,22 +306,18 @@ public class Customer   {
         Objects.equals(this.cname, customer.cname) &&
         Objects.equals(this.firstName, customer.firstName) &&
         Objects.equals(this.lastName, customer.lastName) &&
+        Objects.equals(this.dob, customer.dob) &&
         Objects.equals(this.email, customer.email) &&
         Objects.equals(this.password, customer.password) &&
         Objects.equals(this.phone, customer.phone) &&
         Objects.equals(this.customerStatus, customer.customerStatus) &&
-        Objects.equals(this.streetNo, customer.streetNo) &&
-        Objects.equals(this.streeName, customer.streeName) &&
-        Objects.equals(this.streeType, customer.streeType) &&
-        Objects.equals(this.suburb, customer.suburb) &&
-        Objects.equals(this.postCode, customer.postCode) &&
-        Objects.equals(this.city, customer.city) &&
-        Objects.equals(this.county, customer.county);
+        Objects.equals(this.address, customer.address) &&
+        Objects.equals(this.attributes, customer.attributes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, cname, firstName, lastName, email, password, phone, customerStatus, streetNo, streeName, streeType, suburb, postCode, city, county);
+    return Objects.hash(id, cname, firstName, lastName, dob, email, password, phone, customerStatus, address, attributes);
   }
 
   @Override
@@ -403,17 +329,13 @@ public class Customer   {
     sb.append("    cname: ").append(toIndentedString(cname)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    dob: ").append(toIndentedString(dob)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    customerStatus: ").append(toIndentedString(customerStatus)).append("\n");
-    sb.append("    streetNo: ").append(toIndentedString(streetNo)).append("\n");
-    sb.append("    streeName: ").append(toIndentedString(streeName)).append("\n");
-    sb.append("    streeType: ").append(toIndentedString(streeType)).append("\n");
-    sb.append("    suburb: ").append(toIndentedString(suburb)).append("\n");
-    sb.append("    postCode: ").append(toIndentedString(postCode)).append("\n");
-    sb.append("    city: ").append(toIndentedString(city)).append("\n");
-    sb.append("    county: ").append(toIndentedString(county)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,5 +1,6 @@
 package com.util.ms.dto;
 
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.slf4j.Logger;
@@ -18,7 +19,7 @@ public class CustomerDTO {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerDTO.class);
 
-	ConcurrentHashMap<String, Customer> mapCustomers = new ConcurrentHashMap<String, Customer>();
+	private static ConcurrentHashMap<String, Customer> mapCustomers = new ConcurrentHashMap<String, Customer>();
 	
 	public CustomerDTO() {
 		
@@ -31,24 +32,36 @@ public class CustomerDTO {
 			mapCustomers.put(custId, customer);
 		}
 		
-		return customer;
-		
+		return customer;		
 	}
 	
-	public Customer getCustomer(Long custId) {
-		
+	public Customer getCustomer(Long custId) {		
 		Customer customer = new Customer();
-		if(mapCustomers.contains(String.valueOf(custId))) {
-			customer = mapCustomers.get(String.valueOf(custId));
+		String cId = String.valueOf(custId);
+		LOGGER.info("customer Id "+cId);
+		if(mapCustomers.containsKey(cId)) {
+			LOGGER.info("found customer ");
+			customer = mapCustomers.get(cId);
 		}
 		return customer;
 	}
 
+	public List<Customer> getAllCustomers() {		
+		return (List<Customer>) mapCustomers.values();
+	}
+	
 	public void removeCustomer(Long custId) {
 
-		if(mapCustomers.contains(String.valueOf(custId))) {
+		if(mapCustomers.containsKey(String.valueOf(custId))) {
 			mapCustomers.remove(String.valueOf(custId));
 		}
 
+	}
+	
+	public Customer updateCustomer(Customer customer) {
+		LOGGER.info("Validated customer");
+		String custId = String.valueOf(customer.getId());
+		mapCustomers.replace(custId, mapCustomers.get(custId), customer);
+		return customer;		
 	}
 }
